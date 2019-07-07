@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>Wecome to RELATIVE_URL_TEMPLATES Page</h1>
+<!-- Here we used to give actuall path to the page the link should redirect -->
+<!-- <a href="basic_app/other.html">THE OTHER PAGE</a> -->
+
+<!-- Now we are using Relative url template tagging which -->
+<!-- directly matches the url that need to be implimented when the link is clicked -->
+<!-- for this we need to set a globalvariable  -->
+<!-- app_name='your_app_name'  -->
+<!-- in urls.py file in app folder -->
+<!-- example: app_name='basic_app' -->
+<a href="{% url 'basic_app:other' %}">THE OTHER PAGE</a><br>
+<!-- link to admin page we will have a build in admin PAGE -->
+<!-- which have app_name admin you need not add app_name just use the foolowing TAGGING -->
+<!-- to link to admin page -->
+<!-- you have to run migrations to link this admin page -->
+<!-- before running the app -->
+<a href="{% url 'admin:index' %}">Admin Page</a><br>
+<!-- we can link our index page simply by giving index because we -->
+<!-- directly referred in project urls.py with out include -->
+<a href="{% url 'index'%}">Index page </a><br>
+  </body>
+</html>
